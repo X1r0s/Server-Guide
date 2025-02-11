@@ -1,4 +1,4 @@
-```markdown
+````markdown
 # Guide to Server Setup and Management for Node.js Projects
 
 This guide covers how to configure and manage a Linux server for deploying Node.js projects. You will learn how to update your system, use basic Linux commands, manage users and permissions, configure a firewall, install required components, monitor system resources, view logs, and automate deployments.
@@ -36,32 +36,35 @@ Before starting any work, update your system packages:
 sudo apt update
 sudo apt upgrade -y
 ```
+````
 
 ### 1.2. Basic Linux Commands
 
 Familiarize yourself with some basic commands that will help you navigate and manage your server:
 
 - **Navigation:**
+
   - `cd` – Change directory  
-    *Example:* `cd /var/www`
+    _Example:_ `cd /var/www`
   - `ls` – List files and directories  
-    *Example:* `ls -la`
+    _Example:_ `ls -la`
 
 - **File and Directory Operations:**
+
   - `cp` – Copy files or directories  
-    *Example:* `cp file.txt /path/to/destination/`
+    _Example:_ `cp file.txt /path/to/destination/`
   - `mv` – Move or rename files  
-    *Example:* `mv oldname.txt newname.txt`
+    _Example:_ `mv oldname.txt newname.txt`
   - `rm` – Remove files or directories  
-    *Example:* `rm file.txt` or `rm -r folder/`
+    _Example:_ `rm file.txt` or `rm -r folder/`
   - `mkdir` – Create a new directory  
-    *Example:* `mkdir new_folder`
+    _Example:_ `mkdir new_folder`
 
 - **Managing Permissions:**
   - `chmod` – Change file or directory permissions  
-    *Example:* `chmod 755 script.sh`
+    _Example:_ `chmod 755 script.sh`
   - `chown` – Change file or directory ownership  
-    *Example:* `chown user:group file.txt`
+    _Example:_ `chown user:group file.txt`
 
 ### 1.3. User and Permission Management
 
@@ -166,6 +169,7 @@ pm2 -v
 ### 3.1. Monitoring System Resources
 
 To monitor your server’s performance, you can use the following commands:
+
 - **top:** Displays a real-time list of running processes.
 - **htop:** An enhanced version of top (install with `sudo apt install htop` if needed).
 - **free -h:** Shows memory usage.
@@ -221,10 +225,12 @@ Git hooks allow you to automatically update your project on the server when new 
 Automate deployments with GitHub Actions so that when you push to the `main` branch, your server updates automatically.
 
 1. **Create a directory and workflow file in your project:**
+
    - Directory: `.github/workflows/`
    - File: `deploy.yml`
 
 2. **Example `deploy.yml`:**
+
    ```yaml
    name: Deploy Node.js App
 
@@ -238,21 +244,22 @@ Automate deployments with GitHub Actions so that when you push to the `main` bra
        runs-on: ubuntu-latest
 
        steps:
-       - name: Checkout repository
-         uses: actions/checkout@v2
+         - name: Checkout repository
+           uses: actions/checkout@v2
 
-       - name: Deploy to Server via SSH
-         uses: appleboy/ssh-action@v0.1.5
-         with:
-           host: ${{ secrets.SERVER_IP }}
-           username: ${{ secrets.SERVER_USER }}
-           key: ${{ secrets.SSH_PRIVATE_KEY }}
-           script: |
-             cd /path/to/your/project
-             git pull origin main
-             npm install
-             pm2 restart my-app
+         - name: Deploy to Server via SSH
+           uses: appleboy/ssh-action@v0.1.5
+           with:
+             host: ${{ secrets.SERVER_IP }}
+             username: ${{ secrets.SERVER_USER }}
+             key: ${{ secrets.SSH_PRIVATE_KEY }}
+             script: |
+               cd /path/to/your/project
+               git pull origin main
+               npm install
+               pm2 restart my-app
    ```
+
 3. **Add the following secrets to your GitHub repository:**
    - `SERVER_IP` – Your server's IP address.
    - `SERVER_USER` – The SSH username (e.g., `root`).
@@ -260,23 +267,8 @@ Automate deployments with GitHub Actions so that when you push to the `main` bra
 
 ---
 
-## Conclusion
-
-In this guide, we covered:
-
-- **Server Setup (Linux):**  
-  Updating the system, basic Linux commands, user management, and firewall configuration.
-
-- **Installation of Required Components:**  
-  How to install Node.js, npm, Git, and PM2.
-
-- **Monitoring and Logging:**  
-  Commands to monitor system resources and view application logs.
-
-- **Deployment Automation:**  
-  Setting up Git hooks and CI/CD with GitHub Actions to automatically update your project on the server.
-
-By following these steps, you will create a robust environment for deploying and managing your Node.js projects on a Linux server.
-
 God Save The JS!
+
+```
+
 ```
