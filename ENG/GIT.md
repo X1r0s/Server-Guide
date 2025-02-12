@@ -1,4 +1,3 @@
-````markdown
 # Git Guide
 
 Git is a distributed version control system that allows you to track changes in your code, manage multiple versions of your project, and collaborate efficiently with others. This guide covers the basics of Git—from initializing a repository to working with branches, viewing commit history, and syncing with remote repositories.
@@ -44,7 +43,6 @@ Git is a version control system that allows you to:
 sudo apt update
 sudo apt install git -y
 ```
-````
 
 ### For macOS
 
@@ -208,7 +206,3 @@ If conflicts arise during a merge, Git will mark the conflicted files. To resolv
 ---
 
 God Save The JS!
-
-```
-
-```
