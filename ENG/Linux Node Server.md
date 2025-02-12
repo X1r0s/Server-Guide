@@ -1,4 +1,3 @@
-````markdown
 # Guide to Server Setup and Management for Node.js Projects
 
 This guide covers how to configure and manage a Linux server for deploying Node.js projects. You will learn how to update your system, use basic Linux commands, manage users and permissions, configure a firewall, install required components, monitor system resources, view logs, and automate deployments.
@@ -36,7 +35,6 @@ Before starting any work, update your system packages:
 sudo apt update
 sudo apt upgrade -y
 ```
-````
 
 ### 1.2. Basic Linux Commands
 
@@ -268,7 +266,3 @@ Automate deployments with GitHub Actions so that when you push to the `main` bra
 ---
 
 God Save The JS!
-
-```
-
-```

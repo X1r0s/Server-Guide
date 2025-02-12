@@ -1,4 +1,3 @@
-````markdown
 # PM2 Guide for Node.js Projects
 
 PM2 is a popular process manager for Node.js applications that helps you run, monitor, and automatically restart your applications in production environments. It provides features such as automatic restarts on crashes, load balancing in cluster mode, and convenient log management. This guide explains how to install PM2, start and manage your application, and introduces the most common commands with examples.
@@ -40,7 +39,6 @@ Before installing PM2, ensure that Node.js and npm are installed on your server.
 node -v
 npm -v
 ```
-````
 
 ### 1.2. Global Installation
 
@@ -283,7 +281,3 @@ In the `deploy` section of your configuration file, define the following:
 ---
 
 God Save The JS!
-
-```
-
-```
